@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 80vw;
+        border: black solid 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Esercizio Lunedi 23-01-2023</h1>
+
+    <label for="nome"></label>
+    <input id="nome" type="text" />
+    <label for="cognome"></label>
+    <input id="cognome" type="text" />
+
+    <button>Click</button>
+
+    <table>
+      <tr>
+        <td>Nome</td>
+        <td>Cognome</td>
+      </tr>
+    </table>
+    <script>
+      const utenteArray = [];
+
+      const utente = {
+        nome: "nome1",
+        cognome: "cognome1",
+      };
+      console.log(utente);
+
+      const addToArray = function () {
+        bottone = document.querySelector("button");
+        nomeInput = document.querySelector("#nome");
+        cognomeInput = document.querySelector("#cognome");
+        bottone.addEventListener("click", () => {
+          let newPerson = { ...utente };
+          newPerson.nome = nomeInput.value;
+          nomeInput.value = "";
+          newPerson.cognome = cognomeInput.value;
+          cognomeInput.value = "";
+          utenteArray.push(newPerson);
+          console.log(utenteArray);
+        });
+      };
+
+      const addToTable = function () {};
+
+      const addToArray = function () {
+        tabella = document.querySelector("table");
+      };
+    </script>
+  </body>
+</html>
