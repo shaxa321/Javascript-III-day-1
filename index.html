@@ -35,7 +35,6 @@
         nome: "nome1",
         cognome: "cognome1",
       };
-      console.log(utente);
 
       const addToArray = function () {
         bottone = document.querySelector("button");
@@ -49,14 +48,26 @@
           cognomeInput.value = "";
           utenteArray.push(newPerson);
           console.log(utenteArray);
+          j = utenteArray.length - 1;
+          addToTable(j);
         });
       };
 
-      const addToTable = function () {};
-
-      const addToArray = function () {
+      const addToTable = function (i) {
         tabella = document.querySelector("table");
+
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        const td2 = document.createElement("td");
+
+        tabella.appendChild(tr);
+        tr.appendChild(td);
+        td.innerText = utenteArray[i].nome;
+        tr.appendChild(td2);
+        td2.innerText = utenteArray[i].cognome;
       };
+
+      addToArray();
     </script>
   </body>
 </html>
