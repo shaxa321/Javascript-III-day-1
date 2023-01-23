@@ -29,31 +29,64 @@
       </tr>
     </table>
     <script>
+      /*
       const utenteArray = [];
 
-      const utente = {
-        nome: "nome1",
-        cognome: "cognome1",
+            const utente = {
+              nome: "nome1",
+              cognome: "cognome1",
+            };
+
+            const addToArray = function () {
+              bottone = document.querySelector("button");
+              nomeInput = document.querySelector("#nome");
+              cognomeInput = document.querySelector("#cognome");
+              bottone.addEventListener("click", () => {
+                let newPerson = { ...utente };
+                newPerson.nome = nomeInput.value;
+                nomeInput.value = "";
+                newPerson.cognome = cognomeInput.value;
+                cognomeInput.value = "";
+                utenteArray.push(newPerson);
+                console.log(utenteArray);
+                j = utenteArray.length - 1;
+                addToTable(j);
+              });
+            };
+
+            const addToTable = function (i) {
+              tabella = document.querySelector("table");
+
+              const tr = document.createElement("tr");
+              const td = document.createElement("td");
+              const td2 = document.createElement("td");
+
+              tabella.appendChild(tr);
+              tr.appendChild(td);
+              td.innerText = utenteArray[i].nome;
+              tr.appendChild(td2);
+              td2.innerText = utenteArray[i].cognome;
+            };
+
+            addToArray();
+
+
+      */
+      let User = function (name, surname) {
+        this.nome = name;
+        this.cognome = surname;
       };
 
-      const addToArray = function () {
-        bottone = document.querySelector("button");
-        nomeInput = document.querySelector("#nome");
-        cognomeInput = document.querySelector("#cognome");
-        bottone.addEventListener("click", () => {
-          let newPerson = { ...utente };
-          newPerson.nome = nomeInput.value;
-          nomeInput.value = "";
-          newPerson.cognome = cognomeInput.value;
-          cognomeInput.value = "";
-          utenteArray.push(newPerson);
-          console.log(utenteArray);
-          j = utenteArray.length - 1;
-          addToTable(j);
-        });
-      };
+      bottone = document.querySelector("button");
+      nomeInput = document.querySelector("#nome");
+      cognomeInput = document.querySelector("#cognome");
 
-      const addToTable = function (i) {
+      bottone.addEventListener("click", () => {
+        const User1 = new User(nomeInput.value, cognomeInput.value);
+
+        nomeInput.value = "";
+
+        cognomeInput.value = "";
         tabella = document.querySelector("table");
 
         const tr = document.createElement("tr");
@@ -62,12 +95,10 @@
 
         tabella.appendChild(tr);
         tr.appendChild(td);
-        td.innerText = utenteArray[i].nome;
+        td.innerText = User1.nome;
         tr.appendChild(td2);
-        td2.innerText = utenteArray[i].cognome;
-      };
-
-      addToArray();
+        td2.innerText = User1.cognome;
+      });
     </script>
   </body>
 </html>
